@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { MusicApp } from './MusicApp';
 
-import './styles.css';
+// import './styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
