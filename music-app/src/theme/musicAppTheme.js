@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { red } from '@mui/material/colors';
+import { red, yellow } from '@mui/material/colors';
 
 export const musicAppTheme = createTheme({
     palette: {
@@ -7,7 +7,8 @@ export const musicAppTheme = createTheme({
             main: '#262254'
         },
         secondary: {
-            main: '#543884'
+            // main: '#543884'
+            main: yellow.A400
         },
         error: {
             main: red.A400
