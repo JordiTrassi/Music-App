@@ -18,11 +18,14 @@ export const playListSlice = createSlice({
             state.isLoading = false;
             state.page = action.payload.page;
             state.albums = action.payload.albums;
+        },
+        changingViewGrid: (state, action) => {
+            state.viewGrid = action.payload;
         }
 
     },
 })
 
 
-export const { startLoadingAlbums, setAlbums} = playListSlice.actions;
+export const { startLoadingAlbums, setAlbums, changingViewGrid} = playListSlice.actions;
 

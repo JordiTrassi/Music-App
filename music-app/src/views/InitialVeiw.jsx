@@ -1,25 +1,32 @@
-import { MusicNote } from "@mui/icons-material"
-import { Grid, Typography } from "@mui/material"
+import { MusicNote } from '@mui/icons-material';
+import { Grid, Typography } from '@mui/material';
 
 
 export const InitialVeiw = () => {
   return (
-    <Grid
-        className='animate__animated animate__fadeIn animate__faster'
+      <Grid
+        className='animate__animated animate__fadeIn'
         container
         spacing={0}
-        direction="column"
+        direction="row"
         alignItems="center"
         justifyContent="center"
-        sx={{ minHeight: 'calc(100vh - 110px)', backgroundColor: 'primary.main', borderRadius: 3}}
-      >
-        <Grid item xs={12}>
-            <MusicNote sx={{fontSize: 300, color: 'white'}} />  
-          </Grid>
-          <Grid item xs={12}>
-            <Typography color="white" variant='h1'>Welcome to Music App</Typography>  
+        sx={{ height: '93%', width: '100%', backgroundColor: 'primary.main', borderRadius: 3, p: 5 }}
+        >
+        <Grid
+          item
+          alignItems="center"
+        >
+          <MusicNote sx={{fontSize: 300, color: 'white'}} />  
         </Grid>
-     </Grid>
+        <Grid
+          item
+          alignItems="center"
+        >
+          <Typography color="white" variant='h1'>Welcome to Music App</Typography>
+          <Typography color="white" variant='h3'>Search your favorite music!</Typography>
+        </Grid>
+      </Grid>
   )
 }
 
