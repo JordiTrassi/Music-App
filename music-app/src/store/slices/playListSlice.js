@@ -6,6 +6,7 @@ export const playListSlice = createSlice({
     name: 'playList',
     initialState: {
         page: 0,
+        viewGrid: true,
         albums: [],
         isLoading: false,
     },

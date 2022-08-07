@@ -1,20 +1,24 @@
 import { Box, Card, CardContent, CardMedia, IconButton, Typography  } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 import { AddCircle } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 export const AlbumCard = ({
     artistName,
     artworkUrl100,
     collectionName,
+    collectionId,
     trackName,
     trackId
 }) => {
 
-//   const theme = useTheme();
+
 
   return (
-    <Card sx={{ display: 'flex', mb: '20px', justifyContent: 'space-between' }}>
+      <Card
+          className='animate__animated animate__fadeIn'
+          sx={{ display: 'flex', mb: '20px', justifyContent: 'space-between', boxShadow: 6 }}
+      >
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
@@ -26,9 +30,11 @@ export const AlbumCard = ({
         </CardContent>
               
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-          <IconButton aria-label="addCircle">
-             <AddCircle /> 
-          </IconButton>
+            <Link to={`/album/${collectionId}`}>
+                <IconButton>
+                    <AddCircle fontSize='large'/> 
+                </IconButton>
+            </Link>
           
           
         </Box>
