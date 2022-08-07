@@ -5,14 +5,23 @@ export const playListSlice = createSlice({
 
     name: 'playList',
     initialState: {
-        artist: 'Nirvana',
-        album: 'Ultimo album'
+        page: 0,
+        albums: [],
+        isLoading: false,
     },
     reducers: {
-    
-  },
+        startLoadingAlbums: (state) => {
+            state.isLoading = true;
+        },
+        setAlbums: (state, action) => {
+            state.isLoading = false;
+            state.page = action.payload.page;
+            state.albums = action.payload.albums;
+        }
+
+    },
 })
 
 
-export const { } = playListSlice.actions;
+export const { startLoadingAlbums, setAlbums} = playListSlice.actions;
 
