@@ -1,10 +1,13 @@
 import { useSelector } from 'react-redux';
-import { Navigate, useParams } from 'react-router-dom';
-import { Box, Grid, Typography } from '@mui/material';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Box, Grid, IconButton, Tooltip, Typography } from '@mui/material';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 
 
 export const AlbumPage = () => {
+
+  const navigate = useNavigate();
 
   const { collectionId } = useParams();
   
@@ -32,7 +35,8 @@ export const AlbumPage = () => {
         alignItems="center"
         justifyContent="center"
         sx={{ maxWidth: '90%', minHeight: '90vh', backgroundColor: 'primary.main', borderRadius: 3, ml: 'auto', mr: 'auto', mt: '30px'}}
-      >
+    >
+      
       <Grid
         item
         className='animate__animated animate__fadeInLeft'
@@ -51,13 +55,32 @@ export const AlbumPage = () => {
             src={artworkUrl100}
           />
         </Grid>
-      <Grid
-        item
-        sx={{ml: 6}} 
-      >
+        <Grid
+          item
+          sx={{ml: 6}} 
+        >
           <Typography color="white" variant='h2'sx={{ p: 3 }}>{artistName}</Typography>
           <Typography color="white" variant='h4' sx={{ p: 3 }}>{collectionName}</Typography>
-          <Typography color="white" variant='h6' sx={{ pl: 3 }}>{releaseYearAlbum}</Typography> 
+          <Typography color="white" variant='h6' sx={{ pl: 3 }}>{releaseYearAlbum}</Typography>
+        </Grid>
+        <Grid
+          item
+          sx={{ml: 6}} 
+        >
+          <Tooltip
+            title="back"
+            arrow
+          >
+          <IconButton
+              onClick={() => navigate(-1)}
+              sx={{
+                color: 'white',
+                ':hover': { opacity: 0.5 },
+              }}
+            >
+              <ArrowCircleLeftIcon sx={{ fontSize: 45 }} />
+            </IconButton>
+          </Tooltip>
         </Grid>
      </Grid>
   )

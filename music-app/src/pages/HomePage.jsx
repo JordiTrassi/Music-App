@@ -15,9 +15,9 @@ export const HomePage = () => {
   console.log(albums);
 
 
-  useEffect(() => {
-    dispatch(getAlbums());
-  },[])
+  // useEffect(() => {
+  //   dispatch(getAlbums());
+  // },[])
 
   return (
     <Box
@@ -26,7 +26,7 @@ export const HomePage = () => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      sx={{height:'100vh', p: 2, backgroundColor: 'red'}}
+      sx={{height:'100vh', p: 2}}
     >
 
       {
@@ -35,7 +35,7 @@ export const HomePage = () => {
           : <InitialVeiw />
       }
           
-   </Box>
+    </Box>
 
   )
 }

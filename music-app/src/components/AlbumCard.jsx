@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, IconButton, Tooltip, Typography } from '@mui/material';
 
 import { AddCircle } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
@@ -32,11 +32,17 @@ export const AlbumCard = ({
         </CardContent>
               
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-            <Link to={`/album/${collectionId}`}>
-                <IconButton>
+          <Link to={`/album/${collectionId}`}>
+            <Tooltip
+              title="more info"
+              placement="right"
+              arrow
+            >
+              <IconButton>
                     <AddCircle fontSize='large'/> 
-                </IconButton>
-            </Link>
+                </IconButton>              
+            </Tooltip>
+          </Link>
           
           
         </Box>

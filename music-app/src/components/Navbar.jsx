@@ -1,8 +1,8 @@
-// import { Link } from 'react-router-dom';
-import { AppBar, Box, Toolbar, IconButton, Typography, InputBase, Link  } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, InputBase, Link, Tooltip  } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 
 import SearchIcon from '@mui/icons-material/Search';
+import { MusicNote } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,20 +54,27 @@ export const Navbar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>          
-            <Typography
-                variant="h6"
+          <Typography
+                variant="h5"
                 noWrap
                 component="div"
-                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                sx={{ flexGrow: 1, display: { xs: '2', sm: 'block' } }}
+          >
+            <Tooltip
+              title="home"
+              arrow
+              placement="bottom"
+              
             >
-                <Link
-                    color="inherit"
-                    underline="none" 
-                    href="/"
+              <Link
+                color="inherit"
+                underline="none" 
+                href="/"
                 >
-                    MUSIC APP & iTunes API
-                </Link>
-            </Typography>
+                    <MusicNote sx={{fontSize: 35}} /> MUSIC APP
+              </Link>
+            </Tooltip>
+          </Typography>
             <Search>
                 <SearchIconWrapper>
                     <SearchIcon />
@@ -82,3 +89,4 @@ export const Navbar = () => {
     </Box>
   );
 }
+
