@@ -1,7 +1,6 @@
-import { Box, Button} from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { changingViewGrid, getAlbums } from '../store';
-import { AlbumCard } from '../components';
+import { Box, Button} from '@mui/material';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import GridViewIcon from '@mui/icons-material/GridView';
 import { AlbumsGridView, AlbumsListView } from '../views';
@@ -17,6 +16,9 @@ export const ListPage = () => {
     return (
         <Box
             container
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
         >
             <Box
                 item
@@ -57,7 +59,7 @@ export const ListPage = () => {
                 variant="contained"
                 disabled={isLoading}
                 onClick={() => dispatch(getAlbums(page))}
-                sx={{ p: 2, marginLeft: '50%', marginBottom: '30px' }}
+                sx={{ p: 2, mb: '30px' }}
             >
                 Next Page
             </Button>
