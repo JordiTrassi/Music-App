@@ -1,22 +1,14 @@
-import * as React from 'react';
-import { Box, Button, Grid, List, styled } from '@mui/material';
+import { Box, Button} from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { changingViewGrid, getAlbums } from '../store';
 import { AlbumCard } from '../components';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import GridViewIcon from '@mui/icons-material/GridView';
-
-
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
-});
+import { AlbumsGridView, AlbumsListView } from '../views';
 
 
 
-export const AlbumList = () => {
+export const ListPage = () => {
 
     const dispatch = useDispatch();
     const {isLoading, albums = [], page, viewGrid  } = useSelector(state => state.playList);
@@ -31,7 +23,7 @@ export const AlbumList = () => {
                 display="flex"
                 flexDirection="row"
                 justifyContent="center"
-                sx={{marginBottom: '25px' }}
+                sx={{mb: '20px', mt: '10px' }}
                 
                 >
                     <Button
@@ -53,22 +45,13 @@ export const AlbumList = () => {
                     </Button>
                 
             </Box>
-        
-            <List sx={{ width: '100%', bgcolor: 'background.paper', p: 1 }}>
-                
-                {
-                    albums.map( album => (
-                        
-                        <AlbumCard                    
-                            key={album.trackId}
-                            {...album}
-                        />
 
-                        ))
-                        
-                    }
-            
-            </List>
+            {
+                (viewGrid)
+                    ? <AlbumsGridView />
+                    : <AlbumsListView />
+            }
+        
             
             <Button
                 variant="contained"
@@ -78,8 +61,7 @@ export const AlbumList = () => {
             >
                 Next Page
             </Button>
-    </Box>
+        </Box>
   );
 }
-
 

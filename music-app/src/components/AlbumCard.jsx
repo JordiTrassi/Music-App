@@ -1,7 +1,9 @@
-import { Box, Card, CardContent, CardMedia, IconButton, Typography  } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
 
 import { AddCircle } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+
+
 
 export const AlbumCard = ({
     artistName,

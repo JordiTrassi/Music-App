@@ -1,13 +1,18 @@
-import { Box, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { Box } from '@mui/material';
 import { getAlbums } from '../store';
-import { AlbumList, InitialVeiw } from '../views';
+import { InitialVeiw } from '../views';
+import { ListPage } from './';
 
 
 export const HomePage = () => {
 
   const dispatch = useDispatch();
+  const { albums } = useSelector(state => state.playList);
+
+  console.log(albums);
 
 
   useEffect(() => {
@@ -24,12 +29,12 @@ export const HomePage = () => {
       sx={{height:'100vh', p: 2, backgroundColor: 'red'}}
     >
 
-      {/* <InitialVeiw /> */}
-
-
-
-      <AlbumList />
-
+      {
+        (albums.length)
+          ? <Navigate to="/list" />
+          : <InitialVeiw />
+      }
+          
    </Box>
 
   )
