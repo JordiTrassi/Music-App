@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { AppBar, Box, Toolbar, Typography, InputBase, Link, Tooltip, FormControl } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
-
 import SearchIcon from '@mui/icons-material/Search';
 import { MusicNote } from '@mui/icons-material';
 import { verifyInputValue } from '../helpers/verifyInputValue';
-import { getAlbums, startLoadingAlbums } from '../store';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
 
+import { getAlbums, startLoadingAlbums } from '../store';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,13 +58,13 @@ export const Navbar = () => {
 
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
+  const { errorMessage } = useSelector(state => state.playList);
 
   const onInputChange = ({target}) => {
     setInputValue(target.value);
   }
 
   const onSubmit = async () => {
-
     const verifiedInputValue = await verifyInputValue(inputValue);
 
     dispatch(startLoadingAlbums({ verifiedInputValue }));
@@ -72,7 +74,6 @@ export const Navbar = () => {
   useEffect(() => {
     const listener = event => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
-        console.log("Enter key was pressed. Run your function.");
         event.preventDefault();
         onSubmit();
       }
@@ -82,6 +83,16 @@ export const Navbar = () => {
       document.removeEventListener("keydown", listener);
     };
   }, [inputValue]);
+
+  useEffect(() => {
+      if (errorMessage.length > 0) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: errorMessage,
+              })
+      }
+  }, [errorMessage])
 
   return (
 

@@ -11,23 +11,10 @@ import { changingViewGrid, getAlbums } from '../store';
 import { AlbumsGridView, AlbumsListView } from '../views';
 
 
-
 export const ListPage = () => {
 
     const dispatch = useDispatch();
-    const { errorMessage, isLoading, page, viewGrid, verifiedInputValue } = useSelector(state => state.playList);
-
-    useEffect(() => {
-        console.log(errorMessage);
-        if (errorMessage.length > 0) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: errorMessage,
-                })
-        }
-    }, [errorMessage])
-
+    const { isLoading, page, viewGrid, verifiedInputValue } = useSelector(state => state.playList);
 
     return (
         <Box
