@@ -1,8 +1,6 @@
-import { Box, Card, CardContent, CardMedia, IconButton, Tooltip, Typography } from '@mui/material';
-
-import { AddCircle } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-
+import { Box, Card, CardContent, CardMedia, IconButton, Tooltip, Typography } from '@mui/material';
+import { AddCircle } from '@mui/icons-material';
 
 
 export const AlbumCard = ({
@@ -10,8 +8,6 @@ export const AlbumCard = ({
     artworkUrl100,
     collectionName,
     collectionId,
-    trackName,
-    trackId
 }) => {
 
 
@@ -43,8 +39,7 @@ export const AlbumCard = ({
                 </IconButton>              
             </Tooltip>
           </Link>
-          
-          
+               
         </Box>
       </Box>
         <CardMedia

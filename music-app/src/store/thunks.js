@@ -11,8 +11,6 @@ export const getAlbums = ({ page = 0, verifiedInputValue }) => {
         (data.resultCount === 0)
             ? dispatch(noApiResults())
             : dispatch(setAlbums({ albums: data.results, page: page + 1}));
-       
-
-        
+           
     }
 }

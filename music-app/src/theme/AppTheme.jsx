@@ -3,7 +3,8 @@ import { CssBaseline } from '@mui/material';
 
 import { musicAppTheme } from './';
 
-export const AppTheme = ({children}) => {
+export const AppTheme = ({ children }) => {
+  
   return (
     <ThemeProvider theme={musicAppTheme}>
         <CssBaseline />

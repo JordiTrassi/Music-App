@@ -8,11 +8,8 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 export const AlbumPage = () => {
 
   const navigate = useNavigate();
-
-  const { collectionId } = useParams();
-  
-  const { albums } = useSelector(state => state.playList);
-  
+  const { collectionId } = useParams();  
+  const { albums } = useSelector(state => state.playList);  
   const album = albums.find(album => album.collectionId === parseInt(collectionId));
 
   if (!album) {
@@ -21,10 +18,8 @@ export const AlbumPage = () => {
 
   const { artistName, collectionName, artworkUrl100, releaseDate } = album;
 
-  const releaseYear = new Date (releaseDate);
-  
-  const releaseYearAlbum = releaseYear.getFullYear();
-  
+  const releaseYear = new Date (releaseDate);  
+  const releaseYearAlbum = releaseYear.getFullYear();  
 
   return (
   

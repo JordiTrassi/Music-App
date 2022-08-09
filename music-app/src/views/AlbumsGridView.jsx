@@ -5,7 +5,7 @@ import { AlbumCard, IsLoading } from '../components';
 
 export const AlbumsGridView = () => {
     
-    const {isLoading, albums = [], page, viewGrid  } = useSelector(state => state.playList);
+    const { isLoading, albums = [] } = useSelector(state => state.playList);
 
 
     return (
