@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changingViewGrid, getAlbums } from '../store';
+
 import { Box, Button, Tooltip} from '@mui/material';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import GridViewIcon from '@mui/icons-material/GridView';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
+
+import { changingViewGrid, getAlbums } from '../store';
 import { AlbumsGridView, AlbumsListView } from '../views';
 
 
@@ -10,7 +15,18 @@ import { AlbumsGridView, AlbumsListView } from '../views';
 export const ListPage = () => {
 
     const dispatch = useDispatch();
-    const { isLoading, page, viewGrid, verifiedInputValue } = useSelector(state => state.playList);
+    const { errorMessage, isLoading, page, viewGrid, verifiedInputValue } = useSelector(state => state.playList);
+
+    useEffect(() => {
+        console.log(errorMessage);
+        if (errorMessage.length > 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: errorMessage,
+                })
+        }
+    }, [errorMessage])
 
 
     return (

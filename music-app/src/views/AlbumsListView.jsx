@@ -21,9 +21,8 @@ export const AlbumsListView = () => {
                             {...album}
                         />
                         ))
-                    
             }
-        
+            
         </List>
     );
 }
