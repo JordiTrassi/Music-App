@@ -18,7 +18,7 @@ export const AlbumsGridView = () => {
             
             {
                 (isLoading)
-                    ? <IsLoading />
+                    ? <Grid item sx={{ml: '42%'}}><IsLoading /></Grid>
                     : albums.map( album => (
                         <Grid
                             item
