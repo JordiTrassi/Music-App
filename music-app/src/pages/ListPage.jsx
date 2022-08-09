@@ -10,7 +10,7 @@ import { AlbumsGridView, AlbumsListView } from '../views';
 export const ListPage = () => {
 
     const dispatch = useDispatch();
-    const {isLoading, albums = [], page, viewGrid  } = useSelector(state => state.playList);
+    const {isLoading, page, viewGrid, verifiedInputValue  } = useSelector(state => state.playList);
 
 
     return (
@@ -74,7 +74,7 @@ export const ListPage = () => {
                 <Button
                     variant="contained"
                     disabled={isLoading}
-                    onClick={() => dispatch(getAlbums(page))}
+                    onClick={() => dispatch(getAlbums({ page, verifiedInputValue }))}
                     sx={{ p: 2, mb: '30px' }}
                 >
                     Next Page

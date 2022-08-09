@@ -1,8 +1,13 @@
-import { AppBar, Box, Toolbar, Typography, InputBase, Link, Tooltip  } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { AppBar, Box, Toolbar, Typography, InputBase, Link, Tooltip, FormControl } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 
 import SearchIcon from '@mui/icons-material/Search';
 import { MusicNote } from '@mui/icons-material';
+import { verifyInputValue } from '../helpers/verifyInputValue';
+import { getAlbums, startLoadingAlbums } from '../store';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -47,10 +52,41 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-
 export const Navbar = () => {
 
+  const dispatch = useDispatch();
+  const [inputValue, setInputValue] = useState('');
+
+  const onInputChange = ({target}) => {
+    setInputValue(target.value);
+  }
+
+  const onSubmit = async () => {
+    const verifiedInputValue = await verifyInputValue(inputValue);
+
+    console.log('ONSUBMIT:' + verifiedInputValue);
+
+    dispatch(startLoadingAlbums({ verifiedInputValue }));
+
+    dispatch(getAlbums({ verifiedInputValue }));
+  }
+
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log("Enter key was pressed. Run your function.");
+        event.preventDefault();
+        onSubmit();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, [inputValue]);
+
   return (
+
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>          
@@ -63,26 +99,29 @@ export const Navbar = () => {
             <Tooltip
               title="home"
               arrow
-              placement="bottom"
-              
+              placement="bottom"  
             >
               <Link
                 color="inherit"
                 underline="none" 
                 href="/"
                 >
-                    <MusicNote sx={{fontSize: 35}} /> MUSIC APP
+                  <MusicNote sx={{fontSize: 35}} /> MUSIC APP
               </Link>
             </Tooltip>
           </Typography>
-            <Search>
+          <Search>
                 <SearchIconWrapper>
                     <SearchIcon />
                 </SearchIconWrapper>
-                <StyledInputBase
-                placeholder="Search Album or Artist ..."
-                inputProps={{ 'aria-label': 'search' }}
-                />
+                <FormControl onSubmit={onSubmit}>
+                  <StyledInputBase
+                    type="text"
+                    placeholder="Search Album or Artist ..."
+                    value={inputValue}
+                    onChange={onInputChange}
+                  />
+                </FormControl>
             </Search>
         </Toolbar>
       </AppBar>

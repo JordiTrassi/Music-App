@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { getAlbums } from '../store';
 import { InitialVeiw } from '../views';
-import { ListPage } from './';
+
 
 
 export const HomePage = () => {

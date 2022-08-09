@@ -9,10 +9,13 @@ export const playListSlice = createSlice({
         viewGrid: true,
         albums: [],
         isLoading: false,
+        verifiedInputValue: '',
     },
     reducers: {
-        startLoadingAlbums: (state) => {
+        startLoadingAlbums: (state, action) => {
             state.isLoading = true;
+            state.verifiedInputValue = action.payload.verifiedInputValue;
+            console.log('SLICE: ' + state.verifiedInputValue);
         },
         setAlbums: (state, action) => {
             state.isLoading = false;

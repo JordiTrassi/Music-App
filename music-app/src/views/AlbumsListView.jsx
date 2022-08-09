@@ -16,14 +16,14 @@ export const AlbumsListView = () => {
         <List sx={{ width: '100%', bgcolor: 'background.paper', p: 1 }}>
             
             {
-                albums.map( album => (
-                    
-                    <AlbumCard                    
-                        key={album.trackId}
-                        {...album}
-                    />
-
-                ))
+                (isLoading)
+                    ? ''
+                    : albums.map(album => (
+                        <AlbumCard                    
+                            key={album.collectionId}
+                            {...album}
+                        />
+                        ))
                     
             }
         
