@@ -1,8 +1,6 @@
 import { useSelector } from 'react-redux';
 import { List} from '@mui/material';
-import { AlbumCard } from '../components';
-
-
+import { AlbumCard, IsLoading } from '../components';
 
 
 export const AlbumsListView = () => {
@@ -12,12 +10,11 @@ export const AlbumsListView = () => {
 
     return (
         
-        
         <List sx={{ width: '100%', bgcolor: 'background.paper', p: 1 }}>
             
             {
                 (isLoading)
-                    ? ''
+                    ? <IsLoading />
                     : albums.map(album => (
                         <AlbumCard                    
                             key={album.collectionId}

@@ -15,7 +15,6 @@ export const playListSlice = createSlice({
         startLoadingAlbums: (state, action) => {
             state.isLoading = true;
             state.verifiedInputValue = action.payload.verifiedInputValue;
-            console.log('SLICE: ' + state.verifiedInputValue);
         },
         setAlbums: (state, action) => {
             state.isLoading = false;

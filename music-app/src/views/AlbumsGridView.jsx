@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Grid } from '@mui/material';
-import { AlbumCard } from '../components';
+import { AlbumCard, IsLoading } from '../components';
 
 
 export const AlbumsGridView = () => {
@@ -17,18 +17,20 @@ export const AlbumsGridView = () => {
         >
             
             {
-                albums.map( album => (
-                    <Grid
-                        item
-                        key={album.collectionId}
-                        xs={12} sm={6} md={6} lg={4}
-                    > 
-                        <AlbumCard                    
-                            {...album}
-                        />
-                    </Grid>
-                ))
-                    
+                (isLoading)
+                    ? <IsLoading />
+                    : albums.map( album => (
+                        <Grid
+                            item
+                            key={album.collectionId}
+                            xs={12} sm={6} md={6} lg={4}
+                        > 
+                            <AlbumCard                    
+                                {...album}
+                            />
+                        </Grid>
+                        ))
+                      
             }
         
         </Grid>

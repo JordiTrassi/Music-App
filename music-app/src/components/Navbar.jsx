@@ -62,12 +62,10 @@ export const Navbar = () => {
   }
 
   const onSubmit = async () => {
+
     const verifiedInputValue = await verifyInputValue(inputValue);
 
-    console.log('ONSUBMIT:' + verifiedInputValue);
-
     dispatch(startLoadingAlbums({ verifiedInputValue }));
-
     dispatch(getAlbums({ verifiedInputValue }));
   }
 

@@ -10,7 +10,7 @@ import { AlbumsGridView, AlbumsListView } from '../views';
 export const ListPage = () => {
 
     const dispatch = useDispatch();
-    const {isLoading, page, viewGrid, verifiedInputValue  } = useSelector(state => state.playList);
+    const { isLoading, page, viewGrid, verifiedInputValue } = useSelector(state => state.playList);
 
 
     return (
@@ -29,35 +29,35 @@ export const ListPage = () => {
                 sx={{mb: '20px', mt: '10px' }}
                 
             >
-                    <Button
-                        variant="contained"
-                        disabled={!viewGrid}
-                        onClick={() => dispatch(changingViewGrid(false))}
-                        sx={{ p: 2, mr: 3 }}
-                    >
-                    <Tooltip
-                        title="List View"
-                        arrow
-                        placement="left"
-                    >
-                        <FormatListBulletedIcon sx={{fontSize: 32}} />  
-                    </Tooltip>
-                    </Button>
-                
-                    <Button
-                        variant="contained"
-                        disabled={viewGrid}
-                        onClick={() => dispatch(changingViewGrid(true))}
-                        sx={{ p: 2, ml: 3 }}
-                    >
-                    <Tooltip
-                        title="Grid View"
-                        arrow
-                        placement="right"
-                    >
-                        <GridViewIcon sx={{fontSize: 32}} />  
-                    </Tooltip>
-                    </Button>
+                <Button
+                    variant="contained"
+                    disabled={!viewGrid}
+                    onClick={() => dispatch(changingViewGrid(false))}
+                    sx={{ p: 2, mr: 3 }}
+                >
+                <Tooltip
+                    title="List View"
+                    arrow
+                    placement="left"
+                >
+                    <FormatListBulletedIcon sx={{fontSize: 32}} />  
+                </Tooltip>
+                </Button>
+            
+                <Button
+                    variant="contained"
+                    disabled={viewGrid}
+                    onClick={() => dispatch(changingViewGrid(true))}
+                    sx={{ p: 2, ml: 3 }}
+                >
+                <Tooltip
+                    title="Grid View"
+                    arrow
+                    placement="right"
+                >
+                    <GridViewIcon sx={{fontSize: 32}} />  
+                </Tooltip>
+                </Button>
                 
             </Box>
 
