@@ -13,4 +13,4 @@ I used Material UI and SweetAlert2 and Testing with Jest.
 <img src="https://raw.githubusercontent.com/sweetalert2/sweetalert2/HEAD/assets/swal2-logo.png" alt="sweetalert2" height="40" />
 <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40" /> 
 
-<a href="https://trassi-music-app.netlify.app">Visit my App in Netlify!</a>
+<a href="https://trassi-music-app.netlify.app" align="center">Visit my App in Netlify!</a>
