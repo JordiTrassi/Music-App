@@ -2,7 +2,7 @@ import { MusicNote } from '@mui/icons-material';
 import { Grid, Typography } from '@mui/material';
 
 
-export const InitialVeiw = () => {
+export const InitialView = () => {
   return (
       <Grid
         className='animate__animated animate__fadeIn'

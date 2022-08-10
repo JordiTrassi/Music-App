@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <InitialView.jsx> Debe hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container animate__animated animate__fadeIn css-6paxfn-MuiGrid-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item css-pv8kf-MuiGrid-root"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-7hcj6y-MuiSvgIcon-root"
+        data-testid="MusicNoteIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+        />
+      </svg>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item css-pv8kf-MuiGrid-root"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-13gn88f-MuiTypography-root"
+      >
+        Welcome to Music App
+      </h1>
+      <h3
+        class="MuiTypography-root MuiTypography-h3 css-1qnne57-MuiTypography-root"
+      >
+        Search your favorite music!
+      </h3>
+    </div>
+  </div>
+</div>
+`;

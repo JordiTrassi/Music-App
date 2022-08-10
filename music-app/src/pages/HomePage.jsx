@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { InitialVeiw } from '../views';
+import { InitialView } from '../views';
 
 
 
@@ -21,7 +21,7 @@ export const HomePage = () => {
       {
         (albums.length)
           ? <Navigate to="/list" />
-          : <InitialVeiw />
+          : <InitialView />
       }
           
     </Box>

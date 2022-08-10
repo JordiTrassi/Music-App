@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente <AlbumCard /> Debe de hacer match con el snapshot  1`] = `
+<div>
+  <div
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root animate__animated animate__fadeIn css-1bz0hi6-MuiPaper-root-MuiCard-root"
+  >
+    <div
+      class="MuiBox-root css-j7qwjs"
+    >
+      <div
+        class="MuiCardContent-root css-1qaznj3-MuiCardContent-root"
+      >
+        <div
+          class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+          data-testid="test-collectionName"
+        >
+          Elvis Collection
+        </div>
+        <div
+          class="MuiTypography-root MuiTypography-subtitle1 css-ecpxie-MuiTypography-root"
+        >
+          Elvis
+        </div>
+      </div>
+      <div
+        class="MuiBox-root css-1ndgitk"
+      >
+        <a
+          href="/album/undefined"
+        >
+          <button
+            aria-label="more info"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
+              data-testid="AddCircleIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+              />
+            </svg>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </a>
+      </div>
+    </div>
+    <img
+      alt="Elvis Collection"
+      class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-1c4t542-MuiCardMedia-root"
+      src="Elvis_Image.jp"
+    />
+  </div>
+</div>
+`;
